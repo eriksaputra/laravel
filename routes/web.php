@@ -48,3 +48,25 @@ Route::get('pesan/{makan}/{minum}/{total}',function($mkn,$mnm,$total){
             Minuman yang saya pesan adalah : <b>'.$mnm.'</b><br>
             Total harga yang saya pesan adalah : <b>' .$total. '</b>';
 });
+// Route opsional parameter
+Route::get('nama/{a?}',function($nama="erik saputra"){
+    return 'Nama saya adalah : '.$nama;
+});
+
+Route::get('memesan/{pesan1?}/{pesan2?}/{total?}',function($psn=null,$pesan=null,$total=null){
+    if (isset($psn)) {
+        $psn = "Anda telah memesan $psn";
+        echo $psn;
+    }
+    if (isset($pesan)) {
+        $pesan = " & $pesan";
+        echo $pesan;
+    }
+    if (isset($total)) {
+        $total = " dengan total harga $total";
+        echo $total;
+    }
+    if (!$psn && !$pesan && !$total) {
+        return "Anda belum memesan sesuatu";
+    }
+});
