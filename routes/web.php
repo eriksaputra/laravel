@@ -54,23 +54,23 @@
 //     return 'Nama saya adalah : '.$nama;
 // });
 
-// Route::get('memesan/{pesan1?}/{pesan2?}/{total?}',function($psn=null,$pesan=null,$total=null){
-//     if (isset($psn)) {
-//         $psn = "Anda telah memesan <b>$psn</b>";
-//         echo $psn;
-//     }
-//     if (isset($pesan)) {
-//         $pesan = " & <b>$pesan</b>";
-//         echo $pesan;
-//     }
-//     if (isset($total)) {
-//         $total = " dengan total harga <b>$total</b>";
-//         echo $total;
-//     }
-//     if (!$psn && !$pesan && !$total) {
-//         return "Anda belum memesan sesuatu";
-//     }
-// });
+Route::get('memesan/{pesan1?}/{pesan2?}/{total?}',function($psn=null,$pesan=null,$total=null){
+    if (isset($psn)) {
+        $psn = "Anda telah memesan <b>$psn</b>";
+        echo $psn;
+    }
+    if (isset($pesan)) {
+        $pesan = " & <b>$pesan</b>";
+        echo $pesan;
+    }
+    if (isset($total)) {
+        $total = " dengan total harga <b>$total</b>";
+        echo $total;
+    }
+    if (!$psn && !$pesan && !$total) {
+        return "Anda belum memesan sesuatu";
+    }
+});
 // model Route
 Route::get('/testmodel',function(){
     $query = App\Post::all();
@@ -135,3 +135,18 @@ Route::get('tambahdata',function(){
     $gaji ->save();
     return $gaji;
 });
+// belajar controller
+Route::get('halo','ErikController@hallo');
+Route::get('dunia','ErikController@dunia');
+Route::get('1','ErikController@nama');
+Route::get('2','ErikController@alamat');
+Route::get('3','ErikController@jk');
+Route::get('4','ErikController@agama');
+Route::get('5','ErikController@warga');
+Route::get('6','ErikController@hobi');
+Route::get('7','ErikController@kelas');
+Route::get('8','ErikController@sekolah');
+Route::get('9','ErikController@teman');
+Route::get('10','ErikController@musuh');
+Route::get('warnakucing/{warna?}','ErikController@jeniskucing');
+Route::get('beli/{ayam?}/{harga?}','ErikController@beli');
