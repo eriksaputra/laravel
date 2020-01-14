@@ -66,23 +66,27 @@ class ErikController extends Controller
     }
     public function beli($ayam = null,$harga = null)
     {
-    if ($ayam){
+    if (isset($ayam)){
         $ayam = " Anda membeli : <b>$ayam</b>";
         echo $ayam;
     }
     if (!$ayam && !$harga) {
         return "Silahkan masukan item terlebih dahulu.";
     }
-    if ($harga > 15000) {
-        echo " Anda membeli ayam dengan ukuran Jumbo";
+    if ($harga >= 15000) {
+        echo " Anda membeli ayam dengan ukuran <b>Jumbo</b>";
 
     }
     if ($harga < 15000 && $harga >= 7000) {
-        echo " Anda membeli ayam dengan ukuran Medium";
+        echo " Anda membeli ayam dengan ukuran <b>Medium</b>";
 
     }
-    if ($harga < 7000) {
-        echo " Anda membeli ayam dengan ukuran Small";
+    if ($harga < 7000 && $harga >= 1) {
+        echo " Anda membeli ayam dengan ukuran <b>Small</b>";
+
+    }
+    if ($harga < 1) {
+        echo " Anda memasukan harga yang salah";
 
     }
     }

@@ -150,3 +150,10 @@ Route::get('9','ErikController@teman');
 Route::get('10','ErikController@musuh');
 Route::get('warnakucing/{warna?}','ErikController@jeniskucing');
 Route::get('beli/{ayam?}/{harga?}','ErikController@beli');
+// crud book
+Route::get('book','BookController@index');
+Route::get('book-create/{judul}','BookController@create');
+Route::get('book/{id?}','BookController@show');
+Route::get('book-edit/{id}/{jdl}','BookController@edit');
+Route::get('book-delete/{id}','BookController@delete');
+Route::get('tampil','BookController@tampil');
