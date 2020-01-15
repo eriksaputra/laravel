@@ -62,6 +62,7 @@ class BookController extends Controller
 
     public function tampil1()
     {
-
+        $book = Book::count('id');
+        return $book;
     }
 }
