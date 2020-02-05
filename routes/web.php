@@ -175,5 +175,4 @@ Route::resource('artikel','ArtikelController');
 Route::get('passing','PracticeController@pass');
 Route::get('passing1','PracticeController@pass1');
 Route::get('latsol','PracticeController@pass2');
-
 Route::get('barang','BarangController@index');
